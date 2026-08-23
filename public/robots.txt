@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mits-attendance.vercel.app/sitemap.xml
