@@ -142,6 +142,7 @@ export default function Home() {
   const [tab, setTab]             = useState("Cards");
   const [targetPct, setTargetPct] = useState(75);
   const [leavePlan, setLeavePlan] = useState(0);
+  const [showPassword, setShowPassword] = useState(false);
 
   const steps = [
     "🌐 Opening MITS IMS portal…",
@@ -271,10 +272,27 @@ export default function Home() {
                     value={roll} onChange={e=>setRoll(e.target.value)} disabled={loading} autoComplete="username" />
                 </label>
                 <label className={styles.label}>
-                  🔑 Password
-                  <input className={styles.input} type="password" placeholder="Your IMS password"
-                    value={password} onChange={e=>setPassword(e.target.value)} disabled={loading} autoComplete="current-password" />
-                </label>
+  🔑 Password
+  <div className={styles.passwordWrap}>
+    <input
+      className={styles.inputPassword}
+      type={showPassword ? "text" : "password"}
+      placeholder="Your IMS password"
+      value={password}
+      onChange={e => setPassword(e.target.value)}
+      disabled={loading}
+      autoComplete="current-password"
+    />
+    <button
+      type="button"
+      className={styles.eyeBtn}
+      onClick={() => setShowPassword(!showPassword)}
+      tabIndex={-1}
+    >
+      {showPassword ? "🙈" : "👁️"}
+    </button>
+  </div>
+</label>
                 {error && <div className={styles.errorBox}>❌ {error}</div>}
                 <button className={styles.submitBtn} type="submit" disabled={loading}>
                   {loading ? "⏳ Fetching Attendance…" : "🚀 Fetch My Attendance"}
