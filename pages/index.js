@@ -51,7 +51,7 @@ const OverallBanner = ({ attended, conducted, roll, onLogout }) => {
           <div className={styles.overallBarMark} />
         </div>
         <div className={styles.overallBarLabels}>
-          <span>0%</span><span style={{marginLeft:"71%"}}>75%</span><span>100%</span>
+          <span>0%</span><span style={{marginLeft:"71%"}}></span><span>100%</span>
         </div>
       </div>
     </div>
