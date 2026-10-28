@@ -2,9 +2,33 @@
 .page { font-family:"Inter",sans-serif; background:#f1f5f9; min-height:100vh; color:#1e293b; }
 
 /* ── Marquee ──────────────────────────────────────────────── */
-.marqueeWrap { background:#1e3a6e; overflow:hidden; white-space:nowrap; padding:7px 0; }
-.marquee { display:inline-block; animation:marquee 40s linear infinite; color:#fff; font-size:13px; font-weight:600; letter-spacing:0.03em; padding-left:100%; }
-@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+.marqueeWrap {
+  background: #1e3a6e;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 7px 0;
+  width: 100%;
+}
+
+.marquee {
+  display: inline-block;
+  animation: marquee 40s linear infinite;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding-left: 100%;
+  will-change: transform;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
 
 /* ── Header ───────────────────────────────────────────────── */
 .header { background:#fff; border-bottom:3px solid #dc2626; padding:14px 24px; position:sticky; top:0; z-index:100; box-shadow:0 2px 8px rgba(0,0,0,0.06); }
