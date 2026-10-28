@@ -237,3 +237,91 @@
 .eyeBtn:hover {
   opacity: 1;
 }
+
+/* Theme toggle */
+.themeToggle {
+  padding: 10px 15px;
+  border: 1px solid var(--border-color, #d1d5db);
+  border-radius: 10px;
+  background: var(--card-bg, #ffffff);
+  color: var(--text-color, #111827);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.themeToggle:hover {
+  opacity: 0.85;
+}
+
+/* Student profile */
+.studentProfile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 22px 0;
+  padding: 20px;
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 16px;
+  background: var(--card-bg, #ffffff);
+  color: var(--text-color, #111827);
+}
+
+.studentAvatar {
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #dbeafe;
+  font-size: 27px;
+}
+
+.studentInfo h2 {
+  margin: 0 0 6px;
+  font-size: 19px;
+}
+
+.studentInfo p {
+  margin: 0;
+  color: var(--muted-text, #6b7280);
+  overflow-wrap: anywhere;
+}
+
+/* Global theme colors */
+:root {
+  color-scheme: light;
+  --page-bg: #f5f7fb;
+  --card-bg: #ffffff;
+  --text-color: #111827;
+  --muted-text: #6b7280;
+  --border-color: #e5e7eb;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page-bg: #111827;
+  --card-bg: #1f2937;
+  --text-color: #f9fafb;
+  --muted-text: #cbd5e1;
+  --border-color: #374151;
+}
+
+@media (max-width: 600px) {
+  .themeToggle {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .studentProfile {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .studentInfo h2 {
+    font-size: 16px;
+  }
+}
+

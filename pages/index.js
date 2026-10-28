@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState,useEffect} from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-
 // ── Helpers ──────────────────────────────────────────────────
 const pct = (a, c) => (c <= 0 ? 0 : (a / c) * 100);
 const classesNeeded = (a, c, t) => pct(a,c) >= t ? 0 : Math.max(0, Math.ceil((t*c - 100*a)/(100-t)));
@@ -143,6 +142,9 @@ export default function Home() {
   const [targetPct, setTargetPct] = useState(75);
   const [leavePlan, setLeavePlan] = useState(0);
   const [showPassword, setShowPassword] = useState(false);
+  const [theme, setTheme] = useState("light");
+const [studentName, setStudentName] = useState("");
+
 
   const steps = [
     "🌐 Opening MITS IMS portal…",
@@ -167,12 +169,13 @@ export default function Home() {
       if (!res.ok || !json.success) throw new Error(json.error || "Something went wrong.");
       setData(json.data);
       setLoggedRoll(roll.trim());
+      setStudentName(json.studentName || "");
     } catch(err) { setError(err.message); }
     finally { clearInterval(iv); setStepMsg(""); setLoading(false); }
   };
 
   const handleLogout = () => {
-    setData(null); setLoggedRoll(""); setRoll(""); setPassword(""); setError("");
+    setData(null); setLoggedRoll(""); setRoll(""); setPassword(""); setError(""); setStudentName("");
   };
 
   // Derived
@@ -192,6 +195,16 @@ export default function Home() {
     a.download = `MITS_attendance_${loggedRoll}.csv`;
     a.click();
   };
+  useEffect(() => {
+  const savedTheme = localStorage.getItem("mits-theme");
+  if (savedTheme === "dark" || savedTheme === "light") {
+    setTheme(savedTheme);
+  }
+}, []);
+
+useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
 
   return (
     <>
@@ -314,6 +327,14 @@ export default function Home() {
         ══════════════════════════════════════════════ */}
         {data && (
           <section className={styles.results}>
+            <div className={styles.studentProfile}>
+  <div className={styles.studentAvatar}>👨‍🎓</div>
+
+  <div className={styles.studentInfo}>
+    <h2>{studentName || "Student Profile"}</h2>
+    <p>Roll Number: {loggedRoll}</p>
+  </div>
+</div>
 
             {/* 1. Overall attendance first */}
             <OverallBanner
@@ -410,18 +431,36 @@ export default function Home() {
               </div>
 
               <div className={styles.inputRow}>
-                <label className={styles.label} style={{flex:1}}>
-                  🎯 Target Attendance %
-                  <span className={styles.inputHint}>Enter a value from 1 to 100</span>
-                  <input className={styles.input} type="number" min="1" max="100"
-                    value={targetPct} onChange={e=>setTargetPct(Number(e.target.value))} />
-                </label>
-                <label className={styles.label} style={{flex:1}}>
-                  🏖️ If I Take Leave (Classes)
-                  <span className={styles.inputHint}>Enter planned future absences</span>
-                  <input className={styles.input} type="number" min="0"
-                    value={leavePlan} onChange={e=>setLeavePlan(Number(e.target.value))} />
-                </label>
+<label className={styles.label} style={{ flex: 1 }}>
+  🎯 Target Attendance %
+  <span className={styles.inputHint}>
+    Enter a value from 1 to 100
+  </span>
+  <input
+    className={styles.input}
+    type="number"
+    min="1"
+    max="100"
+    value={targetPct === 0 ? "" : targetPct}
+    onChange={e =>
+      setTargetPct(e.target.value === "" ? 0 : Number(e.target.value))
+    }
+  />
+</label>
+              
+<label className={styles.label} style={{ flex: 1 }}>
+  🏖️ If I Take Leave (Classes)
+  <span className={styles.inputHint}>
+    Enter planned future absences
+  </span>
+  <input
+    className={styles.input}
+    type="number"
+    min="0"
+    value={leavePlan === 0 ? "" : leavePlan}
+    onChange={e => setLeavePlan(e.target.value === "" ? "" : Number(e.target.value))}
+  />
+</label>
               </div>
 
               <div className={styles.predictionBox}>
