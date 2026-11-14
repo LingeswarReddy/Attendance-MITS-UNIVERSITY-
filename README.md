@@ -43,9 +43,11 @@ git push -u origin main
 - Framework: **Next.js** (auto-detected)
 - Click **Deploy** — no extra settings needed
 
-### 3. Done ✅
-Your app is live at `https://mits-attendance.vercel.app`
+## 🚀 Live Demo
 
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel)](https://mits-attendance.vercel.app)
+
+**Visit here:** [https://mits-attendance.vercel.app](https://mits-attendance.vercel.app)
 ---
 
 ## 💻 Run Locally
