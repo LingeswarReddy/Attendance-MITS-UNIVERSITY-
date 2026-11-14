@@ -45,9 +45,9 @@ git push -u origin main
 
 ## 🚀 Live Demo
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel)](https://mits-attendance.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel)](https://attendance-mits.vercel.app/)
 
-**Visit here:** [https://mits-attendance.vercel.app](https://mits-attendance.vercel.app)
+👉 [Click here to use MITS Attendance Tracker](https://attendance-mits.vercel.app/)
 ---
 
 ## 💻 Run Locally
