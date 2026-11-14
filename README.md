@@ -99,7 +99,12 @@ Your credentials are sent over HTTPS to the Vercel function, used once to scrape
 - Period: Last 28 days
 - Project: MITS Attendance Tracker
 
-## ⭐ Star History
+## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=LingeswarReddy/Attendance-MITS-UNIVERSITY-&type=Date)](https://star-history.com/#LingeswarReddy/Attendance-MITS-UNIVERSITY-&Date)
-
+<a href="https://www.star-history.com/?type=date&repos=LingeswarReddy%2FAttendance-MITS-UNIVERSITY-">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=LingeswarReddy/Attendance-MITS-UNIVERSITY-&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=LingeswarReddy/Attendance-MITS-UNIVERSITY-&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=LingeswarReddy/Attendance-MITS-UNIVERSITY-&type=date&legend=top-left" />
+ </picture>
+</a>
