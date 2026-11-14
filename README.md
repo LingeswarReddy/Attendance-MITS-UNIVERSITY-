@@ -88,3 +88,11 @@ Your credentials are sent over HTTPS to the Vercel function, used once to scrape
 | `puppeteer-core` | Headless browser control |
 | `@sparticuz/chromium` | Lightweight Chromium for AWS Lambda / Vercel |
 | `next` | React framework + API routes |
+
+
+---
+
+## ⭐ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=LingeswarReddy/Attendance-MITS-UNIVERSITY-&type=Date)](https://star-history.com/#LingeswarReddy/Attendance-MITS-UNIVERSITY-&Date)
+
