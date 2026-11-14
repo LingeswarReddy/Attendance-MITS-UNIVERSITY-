@@ -93,6 +93,11 @@ Your credentials are sent over HTTPS to the Vercel function, used once to scrape
 
 
 ---
+## 📈 Website Traffic
+
+- 700 clicks from Google Search
+- Period: Last 28 days
+- Project: MITS Attendance Tracker
 
 ## ⭐ Star History
 
